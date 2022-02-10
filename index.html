@@ -1,198 +1,247 @@
-﻿<title>:: 海棠别苑 - 音乐在线 ::</title>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
-<meta name="Author" content="ExoBUD, Jinwoong Yu">
-<meta name="Keywords" content="ExoBUD MP">
-<meta name="Description" content="asf,asx,wma,wmx,wmv,wvx,mp3,wav,mid 网站媒体播放程序">
-<link rel="stylesheet" type="text/css" href="exobud.css">
-<!-- 
-============================================================【程序信息及版权宣告】====
-ExoBUD MP(II) v4.1tc+ [Traditional Chinese Version]
-Copyright(Pe) 1999-2003 Jinwoong Yu[ExoBUD], Kendrick Wong[kiddiken.net].yune_lee[liyu.net]
-======================================================================================
-程序原作者: 庾珍雄(Jinwoong Yu) 
-个人网站: http://exobud.nayana.org 
-电子邮件: exobud@hanmail.net
-繁体中文化作者: 惊直(Kendrick Wong/kiddiken)
-个人网站: http://kiddiken.net
-电子邮件: webmaster@kiddiken.net
-简体中文化作者: liyu(yune_lee)
-个人网站: http://www.liyu.net
-电子邮件: yune_lee@163.net
-0ICQ 账号: 4410162
-发表日期: 2003.01.10(此版本原韩文版) 
-发表日期: 2003.03.23(繁体中文首个版本)
-发表日期: 2003.05.22(简体中文首个版本)
-======================================================================================
--->
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>听松阁音乐视听</title>
 <style type="text/css">
-<!--
-.mulu1 {font-size: 12px; FILTER: dropshadow(color=#ffffff,offx=0,offy=0); COLOR: #ffffff;}
--->
+.wrapper{ margin:0px auto; padding:20px; border:1px solid #CCC; background:#333; width:980px; font-size:12px;}
 </style>
-<noscript></head></noscript>
-<body bgcolor="#000000" leftMargin=0 topMargin=0 marginheight="0" marginwidth="0" scroll=no onLoad="initExobud();" onDragStart="return false" onSelectStart="return false">
-<object classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6"
-type="application/x-oleobject" name="Exobud" width="0" height="0" id="Exobud"
-style="position:relative; left:0px; top:0px; width:0px; height:0px; z-index: 0; visibility: visible;">
-  <param name="autoStart" value="ture">
-  <param name="balance" value="0">
-  <param name="currentPosition" value="0">
-  <param name="currentMarker" value="0">
-  <param name="enableContextMenu" value="false">
-  <param name="enableErrorDialogs" value="false">
-  <param name="enabled" value="true">
-  <param name="fullScreen" value="false">
-  <param name="invokeURLs" value="false">
-  <param name="mute" value="false">
-  <param name="playCount" value="1">
-  <param name="rate" value="1">
-  <param name="uiMode" value="none">
-  <param name="volume" value="100">
-</object>
+<link rel="stylesheet" href="css/zzsc.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/demo.css" />
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/menu_bubble.css" />
+		<script src="js/snap.svg-min.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="img/an.ico"/>
+		<style type="text/css">
+			/*样式初始化*/
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			/*去除横向滚动条*/
+			body {
+				overflow-x: hidden;
+				background-color: 000;
+			}
+			/*将div铺满整个窗口*/
+			.box {
+				height: 100vh;
+				min-height: 520px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+background-color: 000;
+			}
+			/*设置大ul的大小及定位*/
+			.content {
+				position: relative;
+				width: 100%;
+				height: 100%;
+background-color: 000;
+			}
+			/*设置大li样式*/
+			.content li {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 514px;
+			}
+			/*将第一张图片后的图片隐藏*/
+			#li1~li{display: none;}
+			/*设置大li背景图片*/
+			#li1 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg01.jpg);}
+			#li2 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg02.jpg);}
+			#li3 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg03.jpg);}
+			#li4 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg04.jpg);}
+			#li5 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg05.jpg);}
+			#li6 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg06.jpg);}
+			#li7 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg07.jpg);}
+			#li8 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg08.jpg);}
+			#li9 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg09.jpg);}
+			#li10 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg10.jpg);}
+			#li11 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg11.jpg);}
+			#li12 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg12.jpg);}
+			#li13 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg13.jpg);}
+			#li14 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg14.jpg);}
+			#li15 {background-image: url(https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/bg15.jpg);}
+			/*点击a标签,切换大图片*/
+			#li1:target,
+			#li2:target,
+			#li3:target,
+			#li4:target,
+			#li5:target,
+			#li6:target,
+			#li7:target,
+			#li8:target,
+			#li9:target,
+			#li10:target,
+			#li11:target,
+			#li12:target,
+			#li13:target,
+			#li14:target,
+			#li15:target{
+				display: block;
+			}
+			
+			
+		
+		</style>
+	</head>
 
-<script language="JavaScript" src="exobud.js"></script>
-<!-- 加载 ExoBUD MP(II) 基本设定档 -->
-<script language="JavaScript" src="exobudset.js"></script>
-<!-- 加载 ExoBUD MP(II) 播放清单设定文件 -->
-<script language="JavaScript" src="china.js"></script>
-<!-- 如果您不熟悉原始码编辑，请勿随便修改下面使用 JScript 的部份，否则可能会导致程序不能正常运作 -->
-<script language="JScript" for="Exobud" event="openStateChange(sf)">evtOSChg(sf);</script>
-<script language="JScript" for="Exobud" event="playStateChange(ns)">evtPSChg(ns);</script>
-<script language="JScript" for="Exobud" event="error()">evtWmpError();</script>
-<script language="JScript" for="Exobud" event="Buffering(bf)">evtWmpBuff(bf);</script>
-<!-- 加载「动态按钮图文件切换」的 JavaScript 程序文件 -->
-<script language="JavaScript" src="https://cdn.jsdelivr.net/gh/kylehao/free263/imgchg.js"></script>
-
-
-<table border="0" cellpadding="0" cellspacing="0" width="1280">
-<!-- fwtable fwsrc="未命名" fwbase="index.jpg" fwstyle="Dreamweaver" fwdocid = "742308039" fwnested="0" -->
-  <tr>
-   <td><img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/spacer.gif" width="1280" height="1" border="0" alt=""></td>
-   <td><img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/spacer.gif" width="1" height="1" border="0" alt=""></td>
-  </tr>
-
-  <tr>
-   <td><img name="index_r1_c1" src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/index_r1_c1.jpg" width="1280" height="11" border="0" alt=""></td>
-   <td><img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/spacer.gif" width="1" height="11" border="0" alt=""></td>
-  </tr>
-  <tr>
-    <td id="bgch" background="https://cdn.jsdelivr.net/gh/kylehao/free263/img/bg01.jpg">
-<iframe src="exobudpl.htm" name="main" width="100%" height="514" align="default" frameborder="no" scrolling="no" marginwidth=0 marginheight=0 allowTransparency="true"></iframe>
-    </td>
-   <td><img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/spacer.gif" width="1" height="514" border="0" alt=""></td>
-  </tr>
-  <tr>
-    <td background="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btnbg.jpg">
-     <table align="left">
-      <tr width="20">
-       <td>&nbsp;&nbsp;
-       </td>
-       <td width="990">
-       </td>
-       <td align="left">
-<img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn01.jpg" width="20" height="8" border="0" alt="" onMouseDown="bgch.background='https://cdn.jsdelivr.net/gh/kylehao/free263/img/bg01.jpg'">
-<img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn02.jpg" width="20" height="8" border="0" alt="" onMouseDown="bgch.background='https://cdn.jsdelivr.net/gh/kylehao/free263/img/bg02.jpg'">
-<img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn03.jpg" width="20" height="8" border="0" alt="" onMouseDown="bgch.background='https://cdn.jsdelivr.net/gh/kylehao/free263/img/bg03.jpg'">
-<img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn04.jpg" width="20" height="8" border="0" alt="" onMouseDown="bgch.background='https://cdn.jsdelivr.net/gh/kylehao/free263/img/bg04.jpg'">
-<img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn05.jpg" width="20" height="8" border="0" alt="" onMouseDown="bgch.background='https://cdn.jsdelivr.net/gh/kylehao/free263/img/bg05.jpg'">
-<img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn06.jpg" width="20" height="8" border="0" alt="" onMouseDown="bgch.background='https://cdn.jsdelivr.net/gh/kylehao/free263/img/bg06.jpg'">
-<img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn07.jpg" width="20" height="8" border="0" alt="" onMouseDown="bgch.background='https://cdn.jsdelivr.net/gh/kylehao/free263/img/bg07.jpg'">
-<img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn08.jpg" width="20" height="8" border="0" alt="" onMouseDown="bgch.background='https://cdn.jsdelivr.net/gh/kylehao/free263/img/bg08.jpg'">
-<img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn09.jpg" width="20" height="8" border="0" alt="" onMouseDown="bgch.background='https://cdn.jsdelivr.net/gh/kylehao/free263/img/bg09.jpg'">
-
-       </td>
-      </tr>
-     </table>
-
-
-    </td>
-   <td><img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/spacer.gif" width="1" height="20" border="0" alt=""></td>
-  </tr>
-  <tr>
-    <td background="https://cdn.jsdelivr.net/gh/kylehao/free263/img/bottom.jpg">
-
-<table width="733" height="54" border="0">
-        <tr> 
-          <td> <div style="position:absolute;left:344px;top:580px;"><img name="playt" src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn_play.gif" width=25 height=25 border=0 onClick="startExobud()"
-onMouseOver="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('playt',2)" onMouseOut="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('playt',3)" style="cursor:hand" title="播放"
-></div></td>
-          <td><div style="position:absolute;left:615px;top:570px;"><img name="stopt" src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn_stop.gif" width=35 height=35 border=0 onClick="wmpStop()"
-onMouseOver="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('stopt',2)" onMouseOut="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('stopt',3)" style="cursor:hand" title="停止"
-></div></td>
-          <td><div style="position:absolute;left:470px;top:580px;"><img name="prevt" src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn_prev.gif" width=25 height=25 border=0 onClick="playPrev()"
-onMouseOver="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('prevt',2)" onMouseOut="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('prevt',3)" style="cursor:hand" title="上一首曲目"></div></td>
-          <td><div style="position:absolute;left:771px;top:580px;"><img name="nextt" src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn_next.gif" width=25 height=25 border=0 onClick="playNext()"
-onMouseOver="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('nextt',2)" onMouseOut="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('nextt',3)" style="cursor:hand" title="下一首曲目"></div></td>
-          <td><div style="position:absolute;left:50px;top:580px;"><marquee behavior="alternate" width=200 height=12 scrollamount=1 scrolldelay=100>
-            <span id="disp1" class="mulu1">海棠别苑 - htsky.com</span></marquee></div></td>
-          <td nowrap onClick="chgTimeFmt()" style="cursor:hand" title="[倒/顺]计时方式"><div style="position:absolute;left:270px;top:580px;"><span id="disp2" class="mulu1" style="width:60;">00:00</span></div></td>
-          <td nowrap><div style="position:absolute;left:900px;top:573px;"><img name="vup" src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn_vup.gif" width=25 height=25 border=0 onClick="wmpVolUp()"
-onMouseOver="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('vup',2)" onMouseOut="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('vup',3)" style="cursor:hand" title="增加音量"
-></div></td>
-          <td nowrap><div style="position:absolute;left:900px;top:585px;"><img name="vdn" src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn_vdn.gif" width=25 height=25 border=0 onClick="wmpVolDn()"
-onMouseOver="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('vdn',2)" onMouseOut="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('vdn',3)" style="cursor:hand" title="减少音量"
-></div></td>
-
-        </tr>
-      </table>
+	<body bgcolor="#000000">
+		
 
 
 
+		<div class="container">
+			<div class="menu-wrap">
+				<nav class="menu">
+					<div class="icon-list">
+						<a href="index.html"><i class="fa fa-fw fa-star-o"></i><span>国语简选</span></a>
+						<a href="kong.html"><i class="fa fa-fw fa-bell-o"></i><span>空灵音乐</span></a>
+						<a href="jingxuan.html"><i class="fa fa-fw fa-comment-o"></i><span>国语精选</span></a>
+						<a href="korea.html"><i class="fa fa-fw fa-bar-chart-o"></i><span>韩国音乐</span></a>
+						<a href="usa.html"><i class="fa fa-fw fa-newspaper-o"></i><span>欧美音乐</span></a>
+						<a href="japan.html"><i class="fa fa-fw fa-envelope-o"></i><span>日本音乐</span></a>
+						<a href="thailand.html"><i class="fa fa-fw fa-newspaper-o"></i><span>泰国音乐</span></a>
+						<a href="india.html"><i class="fa fa-fw fa-newspaper-o"></i><span>印度音乐</span></a>
+						<a href="weimei.html"><i class="fa fa-fw fa-newspaper-o"></i><span>唯美纯音乐</span></a>
+					</div>
+				</nav>
+				<button class="close-button" id="close-button">Close Menu</button>
+				<div class="morph-shape" id="morph-shape" data-morph-open="M-7.312,0H15c0,0,66,113.339,66,399.5C81,664.006,15,800,15,800H-7.312V0z;M-7.312,0H100c0,0,0,113.839,0,400c0,264.506,0,400,0,400H-7.312V0z">
+					<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+						<path d="M-7.312,0H0c0,0,0,113.839,0,400c0,264.506,0,400,0,400h-7.312V0z"/>
+					</svg>
+				</div>
+			</div>
+			<button class="menu-button" id="open-button">Open Menu</button>
+			<div class="content-wrap">
 
-    </td>
-   <td><img src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/spacer.gif" width="1" height="72" border="0" alt=""></td>
-  </tr>
-</table>
-
-
-
-<div id="Layer1" style="position:absolute; width:638px; height:115px; z-index:1; left: 39px; top: 31px; visibility: hidden;"> 
-  <table height=31 align=center cellpadding=0 cellspacing=0 border=0>
-    <tr> 
-      <td> <table height=31 align=center cellpadding=0 cellspacing=0 border=0>
-          <tr> 
-            <!-- 显示播放状态的 Scope 动态图文件：
-如果您想要变更这个图档，请同时参考及修改 imgchg.js 接近檔末的部份。 -->
-            <td width=30 height=31 align=center
-><img name="scope" src="shiting/exobud/img/scope_off.gif" width=30 height=25
-onClick="vizExobud()" style="cursor:help" title="到访 ExoBUD MP 原作者 Jinwoong Yu 的网站 [韩文]"
-></td>
-            
-            <!-- 播放器控制面板上的所有按钮：
-如果您想要变更这些图档，请同时参考及修改 imgchg.js 这个档案的内容。 -->
-            <td width="45" nowrap
-></td>
-            <td width=11></td>
-            <td width="30" nowrap
-><img name="pmode" src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn_rndmode_off.gif" width=15 height=25 border=0 onClick="chgPMode()"
-onMouseOver="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('pmode',2)" onMouseOut="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('pmode',3)" style="cursor:hand" title="播放顺序 (S=循序 R=随机)"
-><img name="rept" src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn_rept_off.gif" width=15 height=25 border=0 onClick="chkRept()"
-onMouseOver="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('rept',2)" onMouseOut="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('rept',3)" style="cursor:hand" title="切换是否重复播放目前的曲目"
-></td>
-            <td width=11></td>
-            <td width="60" nowrap
-><img name="pauzt" src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn_pauz_off.gif" width=20 height=25 border=0 onClick="wmpPP()"
-onMouseOver="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('pauzt',2)" onMouseOut="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('pauzt',3)" style="cursor:hand" title="暂停．继续"
-></td>
-            <td width=11></td>
-            <td width=20></td>
-            <td width=11></td>
-            <td width=11><img name="plist" src="https://cdn.jsdelivr.net/gh/kylehao/free263/img/btn_plist.gif" width=20 height=20 border=0 onClick="openPlist()"
-onMouseOver="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('plist',2)" onMouseOut="https://cdn.jsdelivr.net/gh/kylehao/free263/imgtog('plist',3)" style="cursor:hand" title="显示播放清单内容"
-></td>
-          </tr>
-        </table></td>
-    </tr>
-    <tr> 
-      <td height=0> 
-        <!-- 显示字幕框的部份：
-如果您想要使用字幕功能，您便需要预留页面一些空间用来显示这个字幕框。
-无论您是否使用字幕功能，请勿随便修改或删除下面这段 DIV 区块的语法。 -->
-<div id="capText">ExoBUD MP(II) 字幕显示系统(SMI)</div></td>
-    </tr>
-  </table>
+	<div class="box">
+			<ul class="content">
+				<li id="li1"></li>
+				<li id="li2"></li>
+				<li id="li3"></li>
+				<li id="li4"></li>
+				<li id="li5"></li>
+				<li id="li6"></li>
+				<li id="li7"></li>
+				<li id="li8"></li>
+				<li id="li9"></li>
+				<li id="li10"></li>
+				<li id="li11"></li>
+				<li id="li12"></li>
+				<li id="li13"></li>
+				<li id="li14"></li>
+				<li id="li15"></li>
+			</ul>
+			<ul class="conlist" style="position:absolute; width:638px; height:115px; z-index:1; left: 960px; top: 515px;backgroud-color:000;">
+				<a href="#li1" class="a1"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn01.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li2" class="a2"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn02.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li3" class="a3"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn03.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li4" class="a4"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn04.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li5" class="a5"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn05.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li6" class="a6"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn06.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li7" class="a7"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn07.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li8" class="a8"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn08.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li9" class="a9"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn09.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li10" class="a10"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn10.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li11" class="a11"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn11.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li12" class="a12"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn12.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li13" class="a13"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn13.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li14" class="a14"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn14.jpg" width="20" height="8" border="0" alt=""></a>
+				<a href="#li15" class="a15"><img src="https://code.aliyun.com/free163/publiclib/raw/afb484c8e07676ad23d090d07a7ffb073b65499b/desktop_img/btn15.jpg" width="20" height="8" border="0" alt=""></a>
+			</ul>
+		</div>					
+						
+						
+						
+<!-- 代码 开始 -->
+<div class="fish" style="position:absolute; width:280px; height:175px; z-index:3; left: 139px; top: 50px;backgroud-color:000;">
+<img src="./images/fish.gif" width="280" height="175" border="0" alt="">
 </div>
+<div class="fish" style="position:absolute; width:280px; height:175px; z-index:2; left: 839px; top: 248px;backgroud-color:000;">
+<img src="./images/fish.gif" width="280" height="175" border="0" alt="">
 </div>
-<div id="dis">
-</body>
+
+
+<div class="wrapper" style="position:absolute; width:1306px; height:40px; z-index:1; left: 0px; top: 538px;backgroud-color:000;">
+<div id="player"></div>
+<div class="player">
+	<div class="player-l bg"></div>
+	<div class="player-block bg">
+		<div class="playlist">
+			<span><p class="bg"></p>列表</span>
+			<select class="selectobj" id="list"></select>
+			<div class="select"></div>
+		</div>
+		<div class="seprator bg"></div>
+		<div class="controls">
+			<a href="#" class="pre mode-bg" title="上一曲"></a>
+			<a href="#" class="play mode-bg" title="播放" style="display:none"></a>
+			<a href="#" class="pause mode-bg" title="暂停"></a>
+			<a href="#" class="next mode-bg" title="下一曲"></a>
+			<span style="float:left; margin-left:5px; margin-right:3px; display:inline;">
+				<a href="#" class="random-mode random-mode-select mode-bg"  title="随机播放"></a>
+				<a href="#" class="order-mode mode-bg"  title="列表循环"></a>
+				<a href="#" class="single-mode mode-bg"  title="单曲循环"></a>
+			</span>
+			<a href="#" class="download bg" id="download" title="下载舞曲">下载</a>
+		</div>
+		<div class="seprator bg"></div>
+		<div class="info">
+			<div class="song-name">欢迎使用站长素材</div><div class="time" id="playtime">00:00</div><div class="s" >/</div><div class="time" id="totaltime">00:00</div>
+			<div class="tracks bg">
+				<div class="download-bar bg">
+					<div class="l bg">l</div>
+					<div class="r bg">r</div>
+				</div>
+				<div class="seek-bar bg">
+					<div class="l bg"></div>
+					<div class="r bg"></div>
+					<div class="point bg"></div>
+				</div>
+			</div>
+		</div>
+		<div class="seprator bg"></div>
+		<div class="volumn">
+			<a class="mute mode-bg"></a>
+			<a class="unmute mode-bg"></a>
+			<div class="line bg">
+				<div class="tracks" id="volumn">
+					<div class="volumn-bar bg">
+						<div class="l bg"></div>
+						<div class="r bg"></div>
+						<div class="point bg"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="player-r bg"></div>
+</div>
+<script language="javascript" type="text/javascript" src="js/f.js"></script>
+<script language="javascript" type="text/javascript" src="js/list-index.js"></script>
+<script language="javascript" type="text/javascript" src="js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="js/jquery.jplayer.min.js"></script>
+<script language="javascript" type="text/javascript" src="js/main.js"></script>
+</div>
+<!-- 代码 结束 -->
+
+
+
+
+
+
+			</div><!-- /content-wrap -->
+		</div><!-- /container -->
+		<script src="js/classie.js"></script>
+		<script src="js/main4.js"></script>
+	</body>
+
 </html>
